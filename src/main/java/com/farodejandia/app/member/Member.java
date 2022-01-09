@@ -91,13 +91,13 @@ public class Member {
             cascade = {CascadeType.PERSIST, CascadeType.REMOVE},
             mappedBy = "member" // Field in Payment class.
     )
-    private List<Payment> payments = new ArrayList<>();
+    private final List<Payment> payments = new ArrayList<>();
 
     @OneToMany(
             cascade = {CascadeType.PERSIST, CascadeType.REMOVE},
             mappedBy = "member" // Field in Participant class.
     )
-    private List<Participant> participants = new ArrayList<>();
+    private final List<Participant> participants = new ArrayList<>();
 
     public Member(String idDocument,
                   String email,

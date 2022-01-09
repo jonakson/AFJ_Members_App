@@ -73,7 +73,7 @@ public class Activity {
             cascade = {CascadeType.PERSIST, CascadeType.REMOVE},
             mappedBy = "activity" // Field in Participant class.
     )
-    private List<Participant> participants = new ArrayList<>();
+    private final List<Participant> participants = new ArrayList<>();
 
     public Activity() {
     }

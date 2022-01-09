@@ -58,7 +58,7 @@ public class Membership {
             cascade = {CascadeType.PERSIST, CascadeType.REMOVE},
             mappedBy = "membership" // Field in Payment class.
     )
-    private List<Payment> payments = new ArrayList<>();
+    private final List<Payment> payments = new ArrayList<>();
 
     public Membership(String name, String description, Integer duration, Double price) {
         this.name = name;
