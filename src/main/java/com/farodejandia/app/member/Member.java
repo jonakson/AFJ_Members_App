@@ -17,6 +17,10 @@ import static javax.persistence.GenerationType.SEQUENCE;
                 @UniqueConstraint(
                         name = "member_email_unique",
                         columnNames = "email"
+                ),
+                @UniqueConstraint(
+                        name = "member_id_document_unique",
+                        columnNames = "id_document"
                 )
         }
 )
