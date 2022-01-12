@@ -24,7 +24,10 @@ const Sidebar = () => {
             <Menu.Item key="4" icon={<CarOutlined/>}>
                <Link to="/activities">Activities</Link>
             </Menu.Item>
-            <Menu.Item key="5" icon={<FileOutlined/>}>
+            <Menu.Item key="5" icon={<TeamOutlined/>}>
+               <Link to="/memberships">Memberships</Link>
+            </Menu.Item>
+            <Menu.Item key="6" icon={<FileOutlined/>}>
                <Link to="/documents">Documents</Link>
             </Menu.Item>
          </Menu>

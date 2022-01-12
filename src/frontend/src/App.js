@@ -7,6 +7,7 @@ import DashboardView from "./views/DashboardView";
 import PaymentsView from "./views/PaymentsView";
 import ActivitiesView from "./views/ActivitiesView";
 import DocumentsView from "./views/DocumentsView";
+import MembershipsView from "./views/MembershipsView";
 
 const {Header, Content, Footer} = Layout;
 
@@ -33,6 +34,7 @@ function App() {
                         <Route  path="/members" element={<MembersView/>} />
                         <Route  path="/payments" element={<PaymentsView/>} />
                         <Route  path="/activities" element={<ActivitiesView/>} />
+                        <Route  path="/memberships" element={<MembershipsView/>} />
                         <Route  path="/documents" element={<DocumentsView/>} />
                      </Routes>
                   </div>

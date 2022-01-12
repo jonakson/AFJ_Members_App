@@ -21,13 +21,12 @@ public class MemberController {
     }
 
     @PostMapping
-    public void addStudent(@RequestBody Member member) {
+    public void addMember(@RequestBody Member member) {
         memberService.addMember(member);
     }
 
     @DeleteMapping(path = "{memberId}")
     public void deleteMember(@PathVariable("memberId") Long memberId) {
-        System.out.println(memberId);
         memberService.deleteMember(memberId);
     }
 

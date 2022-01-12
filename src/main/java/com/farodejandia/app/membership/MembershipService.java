@@ -2,6 +2,8 @@ package com.farodejandia.app.membership;
 
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class MembershipService {
 
@@ -12,12 +14,14 @@ public class MembershipService {
     }
 
     public void addMembership(Membership membership) {
-        // TODO check if email exists
         membershipRepository.save(membership);
     }
 
     public void deleteMembership(Long membershipId) {
-        // TODO check if member exists
         membershipRepository.deleteById(membershipId);
+    }
+
+    public List<Membership> getAllMemberships() {
+        return membershipRepository.findAll();
     }
 }

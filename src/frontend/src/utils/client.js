@@ -32,3 +32,24 @@ export const deleteMember = memberId =>
       {method: 'DELETE'}
    ).then(checkStatus);
 
+export const getAllMemberships = () =>
+   fetch("api/v1/memberships")
+      .then(checkStatus);
+
+export const addNewMembership = membership =>
+   fetch(
+      "api/v1/memberships",
+      {
+         headers: {
+            'Content-Type': 'application/json'
+         },
+         method: 'POST',
+         body: JSON.stringify(membership)
+      }
+   ).then(checkStatus);
+
+export const deleteMembership = membershipId =>
+   fetch(
+      `api/v1/memberships/${membershipId}`,
+      {method: 'DELETE'}
+   ).then(checkStatus);

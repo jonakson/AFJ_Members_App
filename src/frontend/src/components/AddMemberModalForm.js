@@ -37,7 +37,7 @@ const AddMemberModalForm = ({showMemberModal, setShowMemberModal, fetchMembers})
          ]}
       >
          <Form
-            name="basic"
+            name="addNewMember"
             labelCol={{ span: 6 }}
             wrapperCol={{ span: 16 }}
             initialValues={{ remember: true }}
