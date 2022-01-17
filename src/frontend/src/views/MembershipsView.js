@@ -13,6 +13,16 @@ const removeMembership = (membership, callback) => {
       });
 }
 
+const ShowMembershipDurationDays = ({membership}) => {
+   if (membership.duration === 0) {
+      return `Paid once`
+   } else if (membership.duration === 1) {
+      return `${membership.duration} Day`
+   } else {
+      return `${membership.duration} Days`
+   }
+}
+
    const columns = fetchMemberships => [
       {
          title: "Name",
@@ -26,8 +36,12 @@ const removeMembership = (membership, callback) => {
       },
       {
          title: "Duration",
-         dataIndex: "duration",
          key: "duration",
+         render: (text, membership) => (
+            <ShowMembershipDurationDays
+               membership={membership}
+            />
+         )
       },
       {
          title: "Price",
@@ -59,7 +73,7 @@ const removeMembership = (membership, callback) => {
 
    const MembershipsView = () => {
 
-      const [memberships, setMembership] = useState([]);
+      const [memberships, setMemberships] = useState([]);
       const [fetching, setFetching] = useState(true);
       const [showMembershipModal, setShowMembershipModal] = useState(false);
 
@@ -90,7 +104,7 @@ const removeMembership = (membership, callback) => {
             .then((res) => res.json())
             .then((data) => {
                console.log(data);
-               setMembership(data);
+               setMemberships(data);
                setFetching(false);
             });
       };

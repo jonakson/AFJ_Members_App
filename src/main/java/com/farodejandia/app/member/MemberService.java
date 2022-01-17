@@ -3,6 +3,7 @@ package com.farodejandia.app.member;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class MemberService {
@@ -25,5 +26,14 @@ public class MemberService {
     public void deleteMember(Long memberId) {
         // TODO check if member exists
         memberRepository.deleteById(memberId);
+    }
+
+    public Optional<Member> findMemberById(Long memberId) {
+        // TODO check if member exists
+        return memberRepository.findById(memberId);
+    }
+
+    public Member getMemberById(Long memberId) {
+        return memberRepository.getById(memberId);
     }
 }

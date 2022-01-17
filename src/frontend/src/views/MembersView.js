@@ -38,7 +38,7 @@ const ShowMembershipRemainingDays = ({member}) => {
       {
          title: "Name & Surname",
          key: "name",
-         render: (text, member) => (
+         render: (member) => (
             `${member.name} ${member.surname}`
          )
       },
@@ -55,7 +55,7 @@ const ShowMembershipRemainingDays = ({member}) => {
       {
          title: "Next Payment",
          key: "entryDate",
-         render: (text, member) => (
+         render: (member) => (
             <ShowMembershipRemainingDays
                member={member}
             />
@@ -64,7 +64,7 @@ const ShowMembershipRemainingDays = ({member}) => {
       {
          title: "Actions",
          key: "actions",
-         render: (text, member) => (
+         render: (member) => (
             <>
                <Button type="primary" icon={<EyeOutlined/>}/>
                <Button icon={<EditOutlined/>}/>
@@ -98,9 +98,7 @@ const ShowMembershipRemainingDays = ({member}) => {
                   setShowMemberModal={setShowMemberModal}
                   fetchMembers={fetchMembers}
                />
-               <Badge
-                  count={members.length}
-               >
+               <Badge count={members.length} showZero>
                   <Avatar shape="square" icon={<UserOutlined/>}/>
                </Badge>
                <Button
@@ -129,7 +127,7 @@ const ShowMembershipRemainingDays = ({member}) => {
       };
 
       useEffect(() => {
-         console.log("Component is mounted.");
+         console.log("Component MembersView is mounted.");
          fetchMembers();
       }, []);
 

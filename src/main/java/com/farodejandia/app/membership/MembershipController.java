@@ -3,6 +3,7 @@ package com.farodejandia.app.membership;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping(path = "api/v1/memberships")
@@ -18,6 +19,11 @@ public class MembershipController {
     @GetMapping
     public List<Membership> getAllMemberships() {
         return membershipService.getAllMemberships();
+    }
+
+    @GetMapping(path = "{membershipId}")
+    public Optional<Membership> getMemberById(@PathVariable("membershipId") Long membershipId) {
+        return membershipService.findMembershipById(membershipId);
     }
 
     @PostMapping

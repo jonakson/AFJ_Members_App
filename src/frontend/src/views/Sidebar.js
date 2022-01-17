@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {Layout, Menu} from "antd";
 import {CarOutlined, CreditCardOutlined, FileOutlined, PieChartOutlined, TeamOutlined,} from "@ant-design/icons";
-import {Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 
 const {Sider} = Layout;
 
@@ -13,22 +13,22 @@ const Sidebar = () => {
          <div className="logo"/>
          <Menu theme="dark" defaultSelectedKeys={["1"]} mode="inline">
             <Menu.Item key="1" icon={<PieChartOutlined/>}>
-               <Link to="/">Dashboard</Link>
+               <NavLink to="/">Dashboard</NavLink>
             </Menu.Item>
             <Menu.Item key="2" icon={<TeamOutlined/>}>
-               <Link to="/members">Members</Link>
+               <NavLink to="/members">Members</NavLink>
             </Menu.Item>
             <Menu.Item key="3" icon={<CreditCardOutlined/>}>
-               <Link to="/payments">Payments</Link>
+               <NavLink to="/payments">Payments</NavLink>
             </Menu.Item>
             <Menu.Item key="4" icon={<CarOutlined/>}>
-               <Link to="/activities">Activities</Link>
+               <NavLink to="/activities">Activities</NavLink>
             </Menu.Item>
             <Menu.Item key="5" icon={<TeamOutlined/>}>
-               <Link to="/memberships">Memberships</Link>
+               <NavLink to="/memberships">Memberships</NavLink>
             </Menu.Item>
             <Menu.Item key="6" icon={<FileOutlined/>}>
-               <Link to="/documents">Documents</Link>
+               <NavLink to="/documents">Documents</NavLink>
             </Menu.Item>
          </Menu>
       </Sider>

@@ -2,6 +2,7 @@ package com.farodejandia.app.participant;
 
 import com.farodejandia.app.activity.Activity;
 import com.farodejandia.app.member.Member;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -19,6 +20,7 @@ public class Participant {
             name = "member_id",
             foreignKey = @ForeignKey(name = "participant_member_id_fk")
     )
+    @JsonIgnore
     private Member member;
 
     @ManyToOne
@@ -27,6 +29,7 @@ public class Participant {
             name = "activity_id",
             foreignKey = @ForeignKey(name = "participant_activity_id_fk")
     )
+    @JsonIgnore
     private Activity activity;
 
     @Column(
